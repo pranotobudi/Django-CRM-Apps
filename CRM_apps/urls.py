@@ -21,6 +21,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePage.as_view(), name="home"),
     path('signup/',subscriber_new, name='sub_new'),
-
+    path('login/',
+        'django.contrib.auth.views.login', 
+        {'template_name': 'login.html'}
+    ),
+    path('logout/',
+        'django.contrib.auth.views.logout', 
+        {'next_page': '/login/'}
+    ),
 
 ]
