@@ -10,6 +10,7 @@ django = "*"
 psycopg2-binary = "*"
 dj-static = "*"
 stripe = "*"
+django-shortuuidfield = "*"
 
 [requires]
 python_version = "3.7"
