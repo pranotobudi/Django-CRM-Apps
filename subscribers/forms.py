@@ -15,7 +15,7 @@ class AddressMixin(forms.ModelForm):
         }  
 
 
-class SubscriberForm(AddressMixin, UserCreationForm):
+class SubscriberForm(AddressMixin):
     first_name = forms.CharField(
         required=True, widget=forms.TextInput(attrs={'class':'form-control'})
     )
