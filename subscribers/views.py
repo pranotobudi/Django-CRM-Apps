@@ -56,7 +56,7 @@ def subscriber_new(request, template='subscribers/subscriber_new.html'):
                     return HttpResponseRedirect(reverse('account_list'))
                 else:
                     return HttpResponseRedirect(
-                        reverse('django.contrib.auth.views.login')
+                        reverse('login')
                     )
             else:
                 return HttpResponseRedirect(reverse('sub_new'))

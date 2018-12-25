@@ -17,17 +17,17 @@ from django.contrib import admin
 from django.urls import path
 from marketing.views import HomePage
 from subscribers.views import subscriber_new
+from django.contrib.auth.views import LoginView, LogoutView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomePage.as_view(), name="home"),
     path('signup/',subscriber_new, name='sub_new'),
     path('login/',
-        'django.contrib.auth.views.login', 
-        {'template_name': 'login.html'}
+        LoginView.as_view(template_name='login.html'),
+        name='login'
     ),
     path('logout/',
-        'django.contrib.auth.views.logout', 
-        {'next_page': '/login/'}
+        LogoutView.as_view(next_page='/login/')
     ),
 
 ]
