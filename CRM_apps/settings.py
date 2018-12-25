@@ -167,3 +167,6 @@ STRIPE_PUBLISHABLE_KEY = 'pk_test_AnDZlfdBSnf5gAPcXEvTFyyN'
 
 # Current Subscription Price
 SUBSCRIPTION_PRICE = 1500
+
+LOGIN_REDIRECT_URL = '/account/list/'
+
