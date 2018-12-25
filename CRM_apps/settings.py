@@ -160,3 +160,10 @@ STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+# Stripe Key Settings
+STRIPE_SECRET_KEY = 'sk_test_Y1n2eK9ewC8zmPiXph7yMsMz'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_AnDZlfdBSnf5gAPcXEvTFyyN'
+
+# Current Subscription Price
+SUBSCRIPTION_PRICE = 1500
