@@ -22,4 +22,5 @@ urlpatterns = [
     path('', HomePage.as_view(), name="home"),
     path('signup/',subscriber_new, name='sub_new'),
 
+
 ]
