@@ -10,6 +10,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .forms import AccountForm
 from contacts.models import Contact
+from communications.models import Communication
 
 
 from .models import Account
@@ -46,10 +47,14 @@ def account_detail(request, uuid):
             return HttpResponseForbidden()
     #print (f"BISMILLAH======{account.uuid} {account.city} {account.address_one}=================BISMILLAH")
     contacts = Contact.objects.filter(account=account)
+    communications = Communication.objects.filter(
+        account=account).order_by('-created_on')
 
     variables = {
         'account': account,
         'contacts': contacts,
+        'communications': communications,
+
     }
     return render(request, 'accounts/account_detail.html', variables)
 
