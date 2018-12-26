@@ -21,6 +21,8 @@ from django.contrib.auth.views import LoginView, LogoutView
 from accounts.views import AccountList, account_cru
 from accounts.urls import account_urls
 from contacts.urls import contact_urls
+from contacts.views import contact_cru
+from contacts.views import ContactDelete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -42,6 +44,10 @@ urlpatterns = [
     #re_path(r'^account/(?P<uuid>[\w-]+)/', include(account_urls)),
     re_path(r'^account/(?P<uuid>\w+)/', include(account_urls)),
     #re_path(r'^account/(?P<uuid>)/', include(account_urls)),
+    re_path(r'^contact/new/$',contact_cru, name='contact_new'),
     re_path(r'^contact/(?P<uuid>[\w-]+)/', include(contact_urls)),
+    re_path(r'^contact/(?P<pk>[\w-]+)/delete/$',
+    ContactDelete.as_view(), name='contact_delete'),
+
 
 ]

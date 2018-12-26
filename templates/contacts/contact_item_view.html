@@ -6,11 +6,11 @@
     <td class="con-cntrl">
         {# Contact Edit Link #}
         <a class="pen edit-contact"
-           href=""></a>
-    </td>
+        href="{{ contact.get_update_url }}?account={{ account.id }}"></a>
+         </td>
     <td class="ci-td-p-r">
         {# Contact Delete Link #}
-        <a class="cancel"
-           href=""></a>
+        <a class="cancel" 
+           href="{{ contact.get_delete_url }}?account={{ account.id }}"></a>
     </td>
 </tr>
