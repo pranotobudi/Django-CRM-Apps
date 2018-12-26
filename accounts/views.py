@@ -9,6 +9,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect 
 from django.urls import reverse
 from .forms import AccountForm
+from contacts.models import Contact
 
 
 from .models import Account
@@ -43,9 +44,12 @@ def account_detail(request, uuid):
     account = Account.objects.get(uuid=uuid)
     if account.owner != request.user:
             return HttpResponseForbidden()
-    print (f"BISMILLAH======{account.uuid} {account.city} {account.address_one}=================BISMILLAH")
+    #print (f"BISMILLAH======{account.uuid} {account.city} {account.address_one}=================BISMILLAH")
+    contacts = Contact.objects.filter(account=account)
+
     variables = {
         'account': account,
+        'contacts': contacts,
     }
     return render(request, 'accounts/account_detail.html', variables)
 
