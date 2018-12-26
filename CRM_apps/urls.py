@@ -20,6 +20,7 @@ from subscribers.views import subscriber_new
 from django.contrib.auth.views import LoginView, LogoutView
 from accounts.views import AccountList, account_cru
 from accounts.urls import account_urls
+from contacts.urls import contact_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -41,5 +42,6 @@ urlpatterns = [
     #re_path(r'^account/(?P<uuid>[\w-]+)/', include(account_urls)),
     re_path(r'^account/(?P<uuid>\w+)/', include(account_urls)),
     #re_path(r'^account/(?P<uuid>)/', include(account_urls)),
+    re_path(r'^contact/(?P<uuid>[\w-]+)/', include(contact_urls)),
 
 ]
