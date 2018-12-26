@@ -1,5 +1,5 @@
 from django.urls import re_path, path
-from .views import account_detail, accout_cru
+from .views import account_detail, account_cru
 
 account_urls = [
     re_path(r'^$',account_detail, name='account_detail'),

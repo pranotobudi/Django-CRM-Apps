@@ -49,7 +49,7 @@ def account_detail(request, uuid):
     }
     return render(request, 'accounts/account_detail.html', variables)
 
-@login_required()
+@login_required
 def account_cru(request, uuid=None):
 
     if uuid:
