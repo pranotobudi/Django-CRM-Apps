@@ -18,7 +18,7 @@ from django.urls import path, re_path, include
 from marketing.views import HomePage
 from subscribers.views import subscriber_new
 from django.contrib.auth.views import LoginView, LogoutView
-from accounts.views import AccountList
+from accounts.views import AccountList, account_cru
 from accounts.urls import account_urls
 
 urlpatterns = [
@@ -31,6 +31,9 @@ urlpatterns = [
     ),
     path('logout/',
         LogoutView.as_view(next_page='/login/')
+    ),
+    re_path(r'^account/new/$',
+        account_cru, name='account_new'
     ),
     re_path(r'^account/list/$',
         AccountList.as_view(), name='account_list'
