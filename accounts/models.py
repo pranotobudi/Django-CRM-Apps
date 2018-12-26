@@ -18,7 +18,7 @@ class Account(models.Model):
     created_on = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return f'{self.name}/{self.uuid}'
     class Meta:
         verbose_name_plural = 'accounts'
 
@@ -26,11 +26,10 @@ class Account(models.Model):
         return u"%s" % self.name
 
     def get_absolute_url(self):
-
-        return HttpResponse(reverse('account_detail'))
+        return reverse('account_detail', args=[self.uuid])
 
     def get_update_url(self):
-        return HttpResponse(reverse('account_update'))
+        return reverse('account_update', args=[self.uuid])
 
     def get_delete_url(self):
-        return HttpResponse(reverse('account_delete'))
+        return reverse('account_delete', args=[self.uuid])
