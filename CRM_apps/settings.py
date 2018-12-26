@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'subscribers.apps.SubscribersConfig',
     'accounts.apps.AccountsConfig',
     'contacts.apps.ContactsConfig',
+    'communications.apps.CommunicationsConfig',
     
 
 ]
